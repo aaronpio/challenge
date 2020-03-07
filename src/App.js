@@ -1,13 +1,15 @@
 import React from "react";
-import "./App.css";
+import styles from "./App.module.scss";
+import Sidebar from "./components/Sidebar";
+import TableContainer from "./components/TableContainer";
+import Details from "./components/Details";
 
 function App() {
   return (
-    <main className="App">
-      <aside></aside>
-      <div className={}></div>
-      <div></div>
-      <header className="App-header"></header>
+    <main className={styles.app}>
+      <Sidebar />
+      <TableContainer />
+      <Details />
     </main>
   );
 }
