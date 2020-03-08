@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./TableSurfaces.module.scss";
-import Table from "react-bootstrap/Table";
 
 const TableSurfaces = ({ key, venueName, surfaceName, status, sport }) => {
   return (
