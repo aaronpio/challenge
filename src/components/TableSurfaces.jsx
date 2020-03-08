@@ -5,7 +5,10 @@ import styles from "./TableSurfaces.module.scss";
 
 const TableSurfaces = ({ surfaces, setSelectedRow }) => {
   const [columns, setColumns] = useState([
-    { venueName: "", surfaceName: "", status: "", sport: "" }
+    { dataField: "venueName", text: "" },
+    { dataField: "surfaceName", text: "" },
+    { dataField: "status", text: "" },
+    { dataField: "sport", text: "" }
   ]);
 
   useEffect(() => {
@@ -31,7 +34,6 @@ const TableSurfaces = ({ surfaces, setSelectedRow }) => {
 
   const rowEvents = {
     onClick: (e, row) => {
-      console.log(e);
       setSelectedRow(row);
     }
   };

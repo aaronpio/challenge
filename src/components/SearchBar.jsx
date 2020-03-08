@@ -6,7 +6,6 @@ import FormControl from "react-bootstrap/FormControl";
 
 const SearchBar = ({ filterSurfaceData }) => {
   const [filter, setFilter] = useState("");
-  console.log(filter);
 
   useEffect(() => {
     filterSurfaceData(filter);

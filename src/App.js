@@ -49,6 +49,8 @@ function App() {
         surface.surfaceName.includes(filter)
       ) {
         return surface;
+      } else {
+        return null;
       }
     });
     parseServerData(newFilteredData);
