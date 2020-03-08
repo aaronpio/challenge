@@ -1,4 +1,16 @@
 .sidebar {
-  width: 10rem;
-  background-color: green;
+  width: 10vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  border-right: solid lightblue;
+  border-width: 2px;
+
+  button {
+    width: 8vw;
+    margin-top: 1rem;
+  }
 }

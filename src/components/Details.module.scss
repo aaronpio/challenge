@@ -1,4 +1,19 @@
 .detail_tab {
-  width: 20rem;
-  background-color: firebrick;
+  //margin: 1rem;
+  width: 20vw;
+  background-color: royalblue;
+  padding: 1rem;
+  color: white;
+
+  h4 {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    border-bottom: solid lightgrey;
+    border-width: 2px;
+  }
+
+  h6 {
+    margin-top: 2rem;
+  }
 }
