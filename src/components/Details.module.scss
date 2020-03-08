@@ -1,6 +1,6 @@
 .detail_tab {
-  //margin: 1rem;
   width: 20vw;
+  min-width: 20vw;
   background-color: royalblue;
   padding: 1rem;
   color: white;
@@ -15,5 +15,44 @@
 
   h6 {
     margin-top: 2rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .detail_tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 15vh;
+    min-height: 15vh;
+    padding: 5vw;
+    padding-top: 2vw;
+
+    h4 {
+      text-justify: center;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      width: 90vw;
+      margin-bottom: 1rem;
+    }
+    .mobile_view {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      font-size: 1rem;
+    }
+    h5 {
+      font-size: 1rem;
+      margin-right: 2rem;
+    }
+
+    h6 {
+      margin-top: 0rem;
+      margin-right: 0.5rem;
+      font-size: 1rem;
+    }
   }
 }

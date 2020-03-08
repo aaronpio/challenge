@@ -7,6 +7,37 @@
   background-color: #fffffe;
 }
 
+.empty {
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
 * {
   font-family: "Ubuntu", "sans serif";
+}
+
+.main_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  h5 {
+    display: block;
+    text-align: center;
+    text-justify: center;
+    height: 3vh;
+    margin-top: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  * {
+    font-size: 0.8rem;
+  }
 }

@@ -1,10 +1,19 @@
 .table_container {
   flex-grow: 2;
-  width: 1rem;
-  padding: 2rem;
+  //height: vh;
+  width: 70vw;
+  padding-left: 2rem;
+  padding-right: 2rem;
   overflow: scroll;
 }
 
 .table_surfaces {
   display: flex;
+}
+
+@media only screen and (max-width: 800px) {
+  .table_container {
+    width: 100vw;
+    height: 63vh;
+  }
 }

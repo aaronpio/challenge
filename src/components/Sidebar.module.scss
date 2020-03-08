@@ -1,5 +1,6 @@
 .sidebar {
   width: 10vw;
+  min-width: 10vw;
 
   display: flex;
   flex-direction: column;
@@ -12,5 +13,25 @@
   button {
     width: 8vw;
     margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .sidebar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100vw;
+    padding: 1rem;
+    border: none;
+    border-bottom: solid lightblue;
+    border-width: 2px;
+
+    button {
+      width: 30vw;
+      //height: 4vh;
+      max-height: 5vh;
+      margin: 0 auto;
+    }
   }
 }
