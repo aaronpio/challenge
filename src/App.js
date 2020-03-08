@@ -71,7 +71,7 @@ function App() {
               selectedRow={selectedRow}
               setSelectedRow={setSelectedRow}
             />
-            <h5>Matched: {filteredData.length}</h5>
+            <h5>Surfaces Matched: {filteredData.length}</h5>
           </div>
 
           <Details details={selectedRow} />

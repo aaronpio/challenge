@@ -5,7 +5,12 @@ import TableServers from "./TableServers";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 
-const TableContainer = ({ surfaceData, serverData,  selectedRow, setSelectedRow }) => {
+const TableContainer = ({
+  surfaceData,
+  serverData,
+  selectedRow,
+  setSelectedRow
+}) => {
   const [key, setKey] = useState("Surfaces");
 
   return (
@@ -18,11 +23,12 @@ const TableContainer = ({ surfaceData, serverData,  selectedRow, setSelectedRow 
         <Tab eventKey="Surfaces" title="Surfaces">
           <TableSurfaces
             surfaces={surfaceData}
+            selectedRow={selectedRow}
             setSelectedRow={setSelectedRow}
           />
         </Tab>
         <Tab eventKey="Servers" title="Servers">
-          <TableServers servers={serverData} />
+          <TableServers servers={serverData} selectedRow={selectedRow} />
         </Tab>
       </Tabs>
     </div>

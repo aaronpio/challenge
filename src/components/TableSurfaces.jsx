@@ -3,17 +3,18 @@ import BootstrapTable from "react-bootstrap-table-next";
 
 import styles from "./TableSurfaces.module.scss";
 
-const TableSurfaces = ({ surfaces, setSelectedRow }) => {
+const TableSurfaces = ({ surfaces, selectedRow, setSelectedRow }) => {
   const [columns, setColumns] = useState([
-    { dataField: "venueName", text: "" },
-    { dataField: "surfaceName", text: "" },
-    { dataField: "status", text: "" },
-    { dataField: "sport", text: "" }
+    { keyField: "id", dataField: "venueName", text: "Venue Name" },
+    { dataField: "surfaceName", text: "Surface Name" },
+    { dataField: "status", text: "Status" },
+    { dataField: "sport", text: "Sport" }
   ]);
 
   useEffect(() => {
     setColumns([
       {
+        keyField: "id",
         dataField: "venueName",
         text: "Venue Name"
       },
@@ -41,6 +42,7 @@ const TableSurfaces = ({ surfaces, setSelectedRow }) => {
   const selectRow = {
     mode: "radio",
     hideSelectColumn: true,
+    selected: [selectedRow.id],
     clickToSelect: true,
     bgColor: "lightblue"
   };

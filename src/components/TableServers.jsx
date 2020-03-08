@@ -1,35 +1,48 @@
 import React, { useEffect, useState } from "react";
 import styles from "./TableServers.module.scss";
-import Table from "react-bootstrap/Table";
 
-const TableServers = ({ servers }) => {
-  const [rows, setRows] = useState(null);
+import BootstrapTable from "react-bootstrap-table-next";
+
+const TableServers = ({ servers, selectedRow }) => {
+  const [columns, setColumns] = useState([
+    { keyField: "id", dataField: "ip4", text: "IP4" },
+    { keyField: "id", dataField: "dns", text: "DNS" }
+  ]);
 
   useEffect(() => {
-    if (servers) {
-      const serverRow = servers.map(server => {
-        return (
-          <tr key={server.id}>
-            <td>{server.ip4}</td>
-            <td>{server.dns}</td>
-          </tr>
-        );
-      });
-      setRows(serverRow);
-    }
+    setColumns([
+      {
+        keyField: "id",
+        dataField: "ip4",
+        text: "IP4"
+      },
+      {
+        keyField: "id",
+        dataField: "dns",
+        text: "DNS"
+      }
+    ]);
   }, [servers]);
 
+  const selectRow = {
+    mode: "radio",
+    hideSelectColumn: true,
+    clickToSelect: false,
+    selected: [selectedRow.server.id],
+    bgColor: "lightblue"
+  };
+
   return (
-    <div className={styles.table_servers}>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>IP4</th>
-            <th>DNS</th>
-          </tr>
-        </thead>
-        <tbody>{rows}</tbody>
-      </Table>
+    <div className={styles.table_surfaces}>
+      <BootstrapTable
+        bootstrap4
+        bordered
+        striped
+        keyField="id"
+        data={servers}
+        columns={columns}
+        selectRow={selectRow}
+      />
     </div>
   );
 };
