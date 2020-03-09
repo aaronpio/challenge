@@ -4,6 +4,8 @@ import BootstrapTable from "react-bootstrap-table-next";
 import styles from "./TableSurfaces.module.scss";
 
 const TableSurfaces = ({ surfaces, selectedRow, setSelectedRow }) => {
+  //const [selectRow, setSelectRow] = useState(null);
+
   const [columns, setColumns] = useState([
     { keyField: "id", dataField: "venueName", text: "Venue Name" },
     { dataField: "surfaceName", text: "Surface Name" },
@@ -11,6 +13,7 @@ const TableSurfaces = ({ surfaces, selectedRow, setSelectedRow }) => {
     { dataField: "sport", text: "Sport" }
   ]);
 
+  //Updates the table as the surfaces data state changes based on the text input filter
   useEffect(() => {
     setColumns([
       {
@@ -33,12 +36,14 @@ const TableSurfaces = ({ surfaces, selectedRow, setSelectedRow }) => {
     ]);
   }, [surfaces]);
 
+  //Sets the selected row state
   const rowEvents = {
     onClick: (e, row) => {
       setSelectedRow(row);
     }
   };
 
+  //Establishes table behaviour of selecting a row
   const selectRow = {
     mode: "radio",
     hideSelectColumn: true,

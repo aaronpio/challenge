@@ -9,7 +9,9 @@ const TableServers = ({ servers, selectedRow }) => {
     { keyField: "id", dataField: "dns", text: "DNS" }
   ]);
 
+  //Updates the table as the servers data state changes based on the text input filter
   useEffect(() => {
+    // if (!servers) {
     setColumns([
       {
         keyField: "id",
@@ -22,7 +24,10 @@ const TableServers = ({ servers, selectedRow }) => {
         text: "DNS"
       }
     ]);
+    //}
   }, [servers]);
+
+  //Sets the selected row behaviour, and sets the default to correspond with the selected surface row
 
   const selectRow = {
     mode: "radio",

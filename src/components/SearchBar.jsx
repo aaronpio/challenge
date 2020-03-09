@@ -5,8 +5,10 @@ import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 
 const SearchBar = ({ filterSurfaceData }) => {
+  //filter state changes on every text input change
   const [filter, setFilter] = useState("");
 
+  //Calls the filterSurfaceData function everytime the text input changes - Keeps all data related states up to date to the SearchBar filter
   useEffect(() => {
     filterSurfaceData(filter);
   }, [filter]);

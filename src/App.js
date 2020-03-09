@@ -16,6 +16,7 @@ function App() {
 
   const [selectedRow, setSelectedRow] = useState(null);
 
+  //API request for data, then sets initial states with result
   useEffect(() => {
     Axios.get(
       `https://2hsjstzo71.execute-api.us-east-1.amazonaws.com/prod/livebarn-interview-project`
@@ -27,6 +28,7 @@ function App() {
     });
   }, []);
 
+  //Parses through all server keys on object, then removes duplicates, and sets the serverData state
   const parseServerData = data => {
     const serverList = data.map(server => server.server);
 
@@ -42,6 +44,8 @@ function App() {
     setServerData(uniqueServerList);
   };
 
+  //Used in the Search bar component. Takes the text input from SearchBar and filters out surface objects who's venue/surface names do not match the text input.
+  //This filtered list is used to update all states for server/surface data objects
   const filterSurfaceData = filter => {
     const newFilteredData = surfaceData.filter(surface => {
       if (
@@ -55,7 +59,7 @@ function App() {
     });
     parseServerData(newFilteredData);
     setFilteredData(newFilteredData);
-    setSelectedRow(newFilteredData[0]);
+    if (newFilteredData.length > 0) setSelectedRow(newFilteredData[0]);
   };
 
   return (
